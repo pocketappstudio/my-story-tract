@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Story Tract — pocketappstudio</title><meta name="description" content="Share what Jesus did for you, in your own words and voice. A link that opens on any phone.">
+<link rel="stylesheet" href="style.css"></head><body>
+<header>pocketappstudio</header>
+<main>
+<section id="hero" style="padding-top:20px">
+<span class="tag">Pre-order · Early access</span>
+<h1>Your story.<br>His good news.</h1>
+<p class="lead">Turn your testimony into a short tract anyone can open with one text. No app needed for them.</p>
+<a class="btn" href="#pricing">Reserve early access</a>
+<a class="btn alt" href="#demo">See a sample</a>
+</section>
+
+<section id="how">
+<h2>How it works</h2>
+<ol class="steps">
+<li><b>Write or record</b> your story in a minute.</li>
+<li><b>Add a verse</b> from the World English Bible.</li>
+<li><b>Send the link</b> by text, or print a QR card.</li>
+</ol>
+</section>
+
+<section id="demo">
+<h2>What they'll see</h2>
+<p class="lead">Tap through this sample.</p>
+<div class="phone"><div class="screen">
+ <div class="pg on"><small>A message from Sam</small><h3>Hey, I wanted to share something with you.</h3><p>A few years ago I felt empty, even with a good job and good friends. Then I met Jesus. Here's what changed.</p>
+  <button class="play" onclick="playSample(this)"><b>▶</b><span>Hear it in my voice<br><span class="sample">SAMPLE · NO AUDIO</span></span></button><div class="bar"><i></i></div></div>
+ <div class="pg"><small>The good news</small><p class="verse">“For God so loved the world, that he gave his only born Son, that whoever believes in him should not perish, but have eternal life.”</p><p class="cite">John 3:16, World English Bible</p></div>
+ <div class="pg"><small>What it means</small><h3>We all fall short.</h3><p>Jesus died for our sins and rose again. Anyone who trusts Him is forgiven and made new.</p><p class="cite" style="margin-top:14px">See Romans 3:23 and Romans 10:9 (WEB).</p></div>
+ <div class="pg"><small>From Sam</small><h3>I'd love to talk.</h3><p>No pressure. If you have questions, just text me back.</p><p class="cite" style="margin-top:18px">Sample tract · names and story are examples</p></div>
+ <div class="nav" style="position:absolute;left:22px;right:22px;bottom:22px"><button id="prev" onclick="go(-1)" disabled>Back</button><div class="dots" id="dots"></div><button id="next" onclick="go(1)">Next</button></div>
+</div></div>
+</section>
+
+<section id="pricing">
+<h2>Pre-order</h2>
+<p class="fine">Not built yet. Launch date: not yet set. Pre-order buyers get early access. If it doesn't ship, you get a full refund through Gumroad.</p>
+<div class="tier"><h3>Free</h3><div class="price">$0</div><ul><li>One tract</li><li>Text link that opens on any phone</li></ul><a class="btn alt" href="#gumroad-TBD">Join the free list</a></div>
+<div class="tier best"><h3>Unlimited</h3><div class="price">$9.99 <span class="fine">one-time</span></div><ul><li>Unlimited tracts</li><li>Your own voice</li><li>Printable QR cards</li></ul><a class="btn" href="#gumroad-TBD">Pre-order on Gumroad</a></div>
+<div class="tier"><h3>Church Pack</h3><div class="price">$49 <span class="fine">one-time</span></div><ul><li>Everything in Unlimited</li><li>Your church logo on tracts and cards</li></ul><a class="btn alt" href="#gumroad-TBD">Pre-order on Gumroad</a></div>
+</section>
+
+<section id="faq">
+<h2>Questions</h2>
+<details><summary>Do they need an app?</summary><p>No. The tract opens in their phone's browser.</p></details>
+<details><summary>Which Bible?</summary><p>The World English Bible, which is public domain.</p></details>
+<details><summary>When does it launch?</summary><p>Not yet set. Pre-order buyers get early access first.</p></details>
+<details><summary>What if it never ships?</summary><p>You get a full refund through Gumroad.</p></details>
+<details><summary>How do I get help?</summary><p>Message us through Gumroad.</p></details>
+</section>
+</main>
+<footer>© 2026 pocketappstudio<br><br><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></footer>
+<script>
+let i=0;const p=[...document.querySelectorAll('.pg')],d=document.getElementById('dots');
+p.forEach(()=>d.appendChild(document.createElement('span')));
+function show(){p.forEach((e,k)=>e.classList.toggle('on',k==i));[...d.children].forEach((e,k)=>e.classList.toggle('on',k==i));prev.disabled=i==0;next.textContent=i==p.length-1?'Start over':'Next'}
+function go(n){i=(i+n+p.length)%p.length;if(n<0&&i<0)i=0;show()}
+function playSample(b){const bar=b.nextElementSibling.firstElementChild;bar.style.width='0';requestAnimationFrame(()=>requestAnimationFrame(()=>bar.style.width='100%'));}
+show();
+</script>
+</body></html>
